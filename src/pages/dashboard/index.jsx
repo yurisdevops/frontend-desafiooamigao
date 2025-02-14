@@ -6,7 +6,7 @@ export function Dashboard() {
   const [userid, setUserId] = useState(null);
   const [data, setData] = useState([]);
   const [dataMembers, setDataMembers] = useState([]);
-  const [activeModal, setActiveModal] = useState(null); 
+  const [activeModal, setActiveModal] = useState(null);
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [nameMember, setNameMember] = useState("");
@@ -213,6 +213,8 @@ export function Dashboard() {
         setPhone("");
 
         getData();
+
+        alert("Telefone adicionado...");
       } catch (error) {
         console.error("Erro ao salvar dados:", error);
       }
