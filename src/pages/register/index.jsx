@@ -8,7 +8,26 @@ export function Register() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  const checkEmail = async () => {
+    try {
+      const response = await api.post("/api/check-email", {
+        email,
+      });
+      return !response.data.error;
+    } catch (error) {
+      console.error("Erro ao verificar email:", error);
+      return false;
+    }
+  };
+
   const handleRegister = async () => {
+    const emailAvailable = await checkEmail();
+    if (!emailAvailable) {
+      alert("Email já cadastrado");
+      navigate("/");
+      return;
+    }
+
     if (!name || !email || !password) {
       alert("Todos os campos são obrigatórios.");
       return;
@@ -32,7 +51,13 @@ export function Register() {
   return (
     <main className="h-screen w-full flex  justify-center items-center bg-slate-700 ">
       <div className="flex justify-center items-center w-96 min-h-auto bg-slate-500 rounded-2xl">
-        <form action={handleRegister} className="flex flex-col gap-3 p-2 mt-3">
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+            handleRegister();
+          }}
+          className="flex flex-col gap-3 p-2 mt-3"
+        >
           <label className="text-3xl text-white font-bold" htmlFor="name">
             Nome
           </label>
@@ -71,7 +96,7 @@ export function Register() {
             type="submit"
             className="bg-white p-2 rounded-2xl mt-4 text-2xl font-medium hover:scale-105 cursor-pointer mb-6"
           >
-            Acessar
+            Cadastre-se
           </button>
 
           <span className="text-center font-bold text-xl text-white mb-6">
