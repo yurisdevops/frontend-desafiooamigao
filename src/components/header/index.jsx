@@ -1,7 +1,5 @@
 import { useNavigate } from "react-router-dom";
 
-import(useNavigate);
-
 export function Header() {
   const navigate = useNavigate();
 
@@ -11,9 +9,14 @@ export function Header() {
   };
 
   return (
-    <header>
+    <header className="flex w-full justify-between p-4 bg-slate-950 text-white">
       <h1>DESAFIO</h1>
-      <button onClick={handleLogout}>Sair</button>
+      <button
+        className="cursor-pointer hover:text-red-500 hover:scale-105"
+        onClick={handleLogout}
+      >
+        Sair
+      </button>
     </header>
   );
 }

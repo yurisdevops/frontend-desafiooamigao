@@ -1,7 +1,9 @@
 import { useState } from "react";
 import api from "./../../services/api";
+import { useNavigate } from "react-router-dom";
 
 export function Register() {
+  const navigate = useNavigate();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -18,14 +20,13 @@ export function Register() {
       password,
     });
 
-    const clientId = response.data.id;
-    console.log(clientId);
-
     if (response.status === 201) {
       alert("Cadastro realizado com sucesso!");
     } else {
       alert("Falha ao realizar cadastro. Tente novamente.");
     }
+
+    navigate("/");
   };
 
   return (

@@ -13,11 +13,6 @@ export function Home() {
         password,
       });
 
-      if (!response.ok) {
-        navigate("/");
-        return;
-      }
-
       if (response.status === 200) {
         const user = response.data.user;
 
