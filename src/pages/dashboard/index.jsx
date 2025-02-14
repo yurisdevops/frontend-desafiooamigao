@@ -22,15 +22,7 @@ export function Dashboard() {
     } else {
       navigate("/");
     }
-
-    window.addEventListener("beforeunload", handleUnload);
-
-    return () => window.removeEventListener("beforeunload", handleUnload);
   }, [navigate]);
-
-  const handleUnload = useCallback(() => {
-    localStorage.removeItem("userId");
-  }, []);
 
   const getData = useCallback(async () => {
     if (userid) {
@@ -214,7 +206,7 @@ export function Dashboard() {
 
         getData();
 
-        alert("Telefone adicionado...");
+        alert("Telefone cadastrado...");
       } catch (error) {
         console.error("Erro ao salvar dados:", error);
       }
