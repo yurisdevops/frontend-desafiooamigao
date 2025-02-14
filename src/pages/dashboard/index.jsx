@@ -185,7 +185,7 @@ export function Dashboard() {
             <p className="text-xl uppercase font-medium">
               Tel: <a className="font-normal text-lg ">{item.email}</a>
             </p>
-            <p>{item.id}</p>
+            
           </div>
         ))}
       </div>
