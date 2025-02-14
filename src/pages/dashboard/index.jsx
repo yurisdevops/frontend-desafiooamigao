@@ -23,9 +23,9 @@ export function Dashboard() {
       navigate("/");
     }
 
-    window.addEventListener("beforeunload0", handleUnload);
+    window.addEventListener("beforeunload", handleUnload);
 
-    return () => window.removeEventListener("beforeunload0", handleUnload);
+    return () => window.removeEventListener("beforeunload", handleUnload);
   }, [navigate]);
 
   const handleUnload = useCallback(() => {
