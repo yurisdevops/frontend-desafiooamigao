@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import api from "../../services/api";
+import { toast } from "react-toastify";
 export function Home() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -17,14 +18,14 @@ export function Home() {
         const user = response.data.user;
 
         localStorage.setItem("userId", user.id);
-
+        toast.success("Login realizado com sucesso!");
         navigate(`/dashboard`);
       } else {
-        alert("Usuário ou senha inválidos");
+        toast.warn("Usuário ou senha inválidos");
       }
     } catch (error) {
       console.error("Erro ao fazer login:", error);
-      alert("Email ou senha inválidos!");
+      toast.warn("Usuário ou senha inválidos");
     }
   };
   return (

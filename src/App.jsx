@@ -3,6 +3,8 @@ import { Layout } from "./components/layout";
 import { Home } from "./pages/home";
 import { Dashboard } from "./pages/dashboard";
 import { Register } from "./pages/register";
+import { New } from "./pages/new";
+import { Config } from "./pages/config";
 
 function App() {
   return (
@@ -11,6 +13,8 @@ function App() {
       <Route path={"/register"} element={<Register />} />
       <Route path="/" element={<Layout />}>
         <Route path={"/dashboard"} element={<Dashboard />} />
+        <Route path={"/dashboard/new"} element={<New />} />
+        <Route path={"/dashboard/config"} element={<Config />} />
       </Route>
     </Routes>
   );

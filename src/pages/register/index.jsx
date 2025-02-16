@@ -1,6 +1,7 @@
 import { useState } from "react";
 import api from "./../../services/api";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 export function Register() {
   const navigate = useNavigate();
@@ -23,13 +24,13 @@ export function Register() {
   const handleRegister = async () => {
     const emailAvailable = await checkEmail();
     if (!emailAvailable) {
-      alert("Email já cadastrado");
+      toast.warn("Email já cadastrado");
       navigate("/");
       return;
     }
 
     if (!name || !email || !password) {
-      alert("Todos os campos são obrigatórios.");
+      toast.error("Todos os campos são obrigatórios.");
       return;
     }
 
@@ -40,9 +41,9 @@ export function Register() {
     });
 
     if (response.status === 201) {
-      alert("Cadastro realizado com sucesso!");
+      toast.success("Cadastro realizado com sucesso!");
     } else {
-      alert("Falha ao realizar cadastro. Tente novamente.");
+      toast.error("Falha ao realizar cadastro. Tente novamente.");
     }
 
     navigate("/");

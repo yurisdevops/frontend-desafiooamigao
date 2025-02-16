@@ -1,3 +1,4 @@
+import { FiLogOut } from "react-icons/fi";
 import { useNavigate } from "react-router-dom";
 
 export function Header() {
@@ -10,13 +11,29 @@ export function Header() {
 
   return (
     <header className="flex w-full justify-between p-4 bg-slate-950 text-white">
-      <h1>DESAFIO</h1>
-      <button
-        className="cursor-pointer hover:text-red-500 hover:scale-105"
-        onClick={handleLogout}
-      >
-        Sair
-      </button>
+      <a href="/dashboard" className="text-2xl font-bold">
+        <h1>DESAFIO</h1>
+      </a>
+      <div className="flex items-center justify-around w-96">
+        <a
+          href="/dashboard/new"
+          className="font-bold relative inline-block pb-1 after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-white after:bottom-0 after:left-0 after:transition-width after:duration-7600 after:ease-in-out hover:after:w-full"
+        >
+          Novo Telefone
+        </a>
+        <a
+          href="/dashboard/config"
+          className="font-bold relative inline-block pb-1 after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-white after:bottom-0 after:left-0 after:transition-width after:duration-700 after:ease-in-out hover:after:w-full"
+        >
+          Novo Membro
+        </a>
+        <button
+          className="cursor-pointer hover:scale-110"
+          onClick={handleLogout}
+        >
+          <FiLogOut size={24} color="#FFF" />
+        </button>
+      </div>
     </header>
   );
 }
