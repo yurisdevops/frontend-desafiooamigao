@@ -10,20 +10,20 @@ export function Header() {
   };
 
   return (
-    <header className="flex w-full justify-between p-4 bg-slate-950 text-white">
+    <header className="flex w-full justify-between p-4 gap-22 bg-slate-950 text-white">
       <a href="/dashboard" className="text-2xl font-bold">
         <h1>DESAFIO</h1>
       </a>
-      <div className="flex items-center justify-around w-96">
+      <div className="flex items-center gap-4 md:justify-around w-72 md:w-96 ">
         <a
           href="/dashboard/new"
-          className="font-bold relative inline-block pb-1 after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-white after:bottom-0 after:left-0 after:transition-width after:duration-7600 after:ease-in-out hover:after:w-full"
+          className="text-xs md:text-xl font-bold relative inline-block pb-1 after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-white after:bottom-0 after:left-0 after:transition-width after:duration-7600 after:ease-in-out hover:after:w-full"
         >
           Novo Telefone
         </a>
         <a
           href="/dashboard/config"
-          className="font-bold relative inline-block pb-1 after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-white after:bottom-0 after:left-0 after:transition-width after:duration-700 after:ease-in-out hover:after:w-full"
+          className="text-xs md:text-xl font-bold relative inline-block pb-1 after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-white after:bottom-0 after:left-0 after:transition-width after:duration-700 after:ease-in-out hover:after:w-full"
         >
           Novo Membro
         </a>

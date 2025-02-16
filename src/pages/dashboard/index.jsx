@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
 import api from "../../services/api";
 import { useNavigate } from "react-router-dom";
+import { FiTrash2 } from "react-icons/fi";
 
 export function Dashboard() {
   const [userid, setUserId] = useState(null);
@@ -58,7 +59,7 @@ export function Dashboard() {
       <div className="flex flex-col gap-3 text-white">
         {data.map((item) => (
           <div className="bg-slate-950 rounded-lg h-20 flex" key={item.id}>
-            <div className="h-full bg-green-600 w-3 mr-6"></div>
+            <div className="h-full bg-green-600 w-3 mr-6 rounded-l-lg"></div>
             <div className="flex flex-col justify-center">
               <p className="text-xl uppercase font-medium">
                 Nome:<a className="font-normal text-lg "> {item.name}</a>
@@ -78,7 +79,7 @@ export function Dashboard() {
       <div className="flex flex-col gap-3 text-white">
         {dataMembers.map((item) => (
           <div className="bg-slate-950 rounded-lg h-20 flex" key={item.id}>
-            <div className="h-full bg-green-600 w-3 mr-6"></div>
+            <div className="h-full bg-green-600 w-3 mr-6 rounded-l-lg"></div>
 
             <div className="flex flex-col justify-center">
               <p className="text-xl uppercase font-medium">
@@ -90,9 +91,9 @@ export function Dashboard() {
             </div>
             <button
               onClick={() => handleRemoveMember(item.id)}
-              className="bg-red-600 p-2 text-white font-bold ml-auto cursor-pointer"
+              className="bg-red-600 p-4 text-white font-bold ml-auto cursor-pointer rounded-r-lg"
             >
-              X
+              <FiTrash2 size={24} />
             </button>
           </div>
         ))}
@@ -110,11 +111,11 @@ export function Dashboard() {
   };
 
   return userid ? (
-    <main className="w-full h-screen flex justify-center bg-white gap-20">
-      <section className="flex flex-col mt-4 w-xl">
+    <main className="w-full h-screen flex flex-col md:flex-row md:justify-center mt-4 bg-white">
+      <section className="flex flex-col md:mt-4 w-full md:w-xl px-4">
         <button
           onClick={() => handleOpenModal("listPhone")}
-          className="cursor-pointer bg-slate-950 p-4 text-white font-bold rounded-2xl text-2xl mb-2"
+          className="cursor-pointer bg-slate-950 p-4 text-white font-bold rounded-2xl text-2xl mb-2 "
         >
           Listar Telefones
         </button>
@@ -130,7 +131,7 @@ export function Dashboard() {
           {activeModal === "listPhone" && modalListPhone()}
         </div>
       </section>
-      <section className="flex flex-col mt-4 w-xl">
+      <section className="flex flex-col mt-4 w-full md:w-xl px-4">
         <button
           onClick={() => handleOpenModal("listMembers")}
           className="cursor-pointer bg-slate-950 p-4 text-white font-bold rounded-2xl text-2xl mb-2"
