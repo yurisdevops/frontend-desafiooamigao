@@ -29,8 +29,8 @@ export function Home() {
     }
   };
   return (
-    <main className="h-screen w-full flex  justify-center items-center bg-slate-700 ">
-      <div className="flex justify-center items-center w-96 h-96 bg-slate-500 rounded-2xl">
+    <main className="h-screen w-full flex  justify-center items-center bg-slate-700 px-10 ">
+      <div className="flex justify-center items-center w-96 h-96 bg-slate-500 rounded-2xl ">
         <form action={handleLogin} className="flex flex-col gap-3 p-2">
           <label className="text-3xl text-white font-bold" htmlFor="email">
             Email
