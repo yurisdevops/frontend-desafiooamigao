@@ -50,7 +50,7 @@ export function Register() {
   };
 
   return (
-    <main className="h-screen w-full flex  justify-center items-center bg-slate-700 px-6">
+    <main className="h-screen w-full flex  justify-center items-center bg-slate-700 px-2">
       <div className="flex justify-center items-center w-96 min-h-auto bg-slate-500 rounded-2xl">
         <form
           onSubmit={(e) => {
