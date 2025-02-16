@@ -17,7 +17,7 @@ export function Header() {
       <div className="flex items-center gap-4 md:justify-around w-72 md:w-96 ">
         <a
           href="/dashboard/new"
-          className="text-xs md:text-xl font-bold relative inline-block pb-1 after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-white after:bottom-0 after:left-0 after:transition-width after:duration-7600 after:ease-in-out hover:after:w-full"
+          className="text-xs md:text-xl font-bold relative inline-block pb-1 after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-white after:bottom-0 after:left-0 after:transition-width after:duration-700 after:ease-in-out hover:after:w-full"
         >
           Novo Telefone
         </a>
