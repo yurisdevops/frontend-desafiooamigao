@@ -78,6 +78,7 @@ export function Config() {
           type="text"
           placeholder="Digite o nome do membro"
           value={name}
+          required
           onChange={(e) => setName(e.target.value)}
         />
         <label htmlFor="">Email</label>
@@ -86,6 +87,7 @@ export function Config() {
           type="email"
           placeholder="ex: junior@example.com"
           value={email}
+          required
           onChange={(e) => setEmail(e.target.value)}
         />
         <label htmlFor="">Senha</label>
@@ -94,6 +96,7 @@ export function Config() {
           type="password"
           placeholder="********"
           value={password}
+          required
           onChange={(e) => setPassword(e.target.value)}
         />
         <button

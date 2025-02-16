@@ -57,6 +57,7 @@ export function New() {
           type="text"
           placeholder="Digite o nome do contato"
           value={name}
+          required
           onChange={(e) => setName(e.target.value)}
         />
         <label htmlFor="">Telefone</label>
@@ -65,6 +66,7 @@ export function New() {
           type="text"
           placeholder="Digite o Telefone"
           value={phone}
+          required
           onChange={(e) => setPhone(e.target.value)}
         />
         <button

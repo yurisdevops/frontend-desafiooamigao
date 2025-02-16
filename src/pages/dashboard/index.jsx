@@ -2,6 +2,7 @@ import { useCallback, useEffect, useState } from "react";
 import api from "../../services/api";
 import { useNavigate } from "react-router-dom";
 import { FiTrash2 } from "react-icons/fi";
+import { toast } from "react-toastify";
 
 export function Dashboard() {
   const [userid, setUserId] = useState(null);
@@ -19,7 +20,7 @@ export function Dashboard() {
     }
   }, [navigate]);
 
-  const getData = useCallback(async () => {
+  const getDataPhones = useCallback(async () => {
     if (userid) {
       try {
         const response = await api.get(`/api/phones?clientId=${userid}`);
@@ -45,10 +46,10 @@ export function Dashboard() {
     if (!userid) {
       return;
     } else {
-      getData();
+      getDataPhones();
       getDataMembers();
     }
-  }, [userid, getData]);
+  }, [userid, getDataPhones, getDataMembers]);
 
   const handleOpenModal = (modalName) => {
     setActiveModal(activeModal === modalName ? null : modalName);
@@ -68,6 +69,12 @@ export function Dashboard() {
                 Tel: <a className="font-normal text-lg ">{item.phone}</a>
               </p>
             </div>
+            <button
+              onClick={() => handleRemovePhone(item.id)}
+              className="bg-red-600 p-4 text-white font-bold ml-auto cursor-pointer rounded-r-lg"
+            >
+              <FiTrash2 size={24} />
+            </button>
           </div>
         ))}
       </div>
@@ -101,11 +108,24 @@ export function Dashboard() {
     );
   };
 
+  const handleRemovePhone = async (id) => {
+    try {
+      await api.delete(`/api/phones/${id}`);
+      toast.success("Telefone removido com sucesso!");
+      getDataPhones();
+    } catch (error) {
+      toast.error("Falha ao remover telefone. Tente novamente.");
+      console.error("Erro ao remover dados:", error);
+    }
+  };
+
   const handleRemoveMember = async (id) => {
     try {
       await api.delete(`/api/members/${id}`);
+      toast.success("Membro removido com sucesso!");
       getDataMembers();
     } catch (error) {
+      toast.error("Falha ao remover membro. Tente novamente.");
       console.error("Erro ao remover dados:", error);
     }
   };
