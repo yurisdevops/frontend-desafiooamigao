@@ -28,10 +28,10 @@ export function Header() {
           Novo Membro
         </a>
         <button
-          className="cursor-pointer hover:scale-110"
+          className="cursor-pointer hover:scale-110:text-red-400"
           onClick={handleLogout}
         >
-          <FiLogOut size={24} color="#FFF" className="hover:text-red-400"/>
+          <FiLogOut size={24} color="#FFF"/>
         </button>
       </div>
     </header>
