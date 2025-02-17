@@ -89,7 +89,7 @@ export function Dashboard() {
             <div className="h-full bg-green-600 w-3 mr-6 rounded-l-lg"></div>
 
             <div className="flex flex-col justify-center">
-              <p className="md:text-xl text:xs uppercase font-medium">
+              <p className="md:text-xl text-lg uppercase font-medium">
                 Nome:<a className="font-normal "> {item.name}</a>
               </p>
               <p className="md:text-xl text-xs uppercase font-medium">
