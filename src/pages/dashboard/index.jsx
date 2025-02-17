@@ -131,7 +131,7 @@ export function Dashboard() {
   };
 
   return userid ? (
-    <main className="w-full h-screen flex flex-col md:flex-row md:justify-center mt-4 bg-white">
+    <main className="w-full max-h-screen flex flex-col md:flex-row md:justify-center mt-4 bg-white">
       <section className="flex flex-col md:mt-4 w-full md:w-xl px-4">
         <button
           onClick={() => handleOpenModal("listPhone")}
