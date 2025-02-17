@@ -62,10 +62,10 @@ export function Dashboard() {
           <div className="bg-slate-950 rounded-lg h-20 flex" key={item.id}>
             <div className="h-full bg-green-600 w-3 mr-6 rounded-l-lg"></div>
             <div className="flex flex-col justify-center">
-              <p className="md:text-xl text-xs uppercase font-medium">
+              <p className="md:text-xl text-sm uppercase font-medium">
                 Nome:<a className="font-normal "> {item.name}</a>
               </p>
-              <p className="md:text-xl text-xs uppercase font-medium">
+              <p className="md:text-xl text-sm uppercase font-medium">
                 Tel: <a className="font-normal ">{item.phone}</a>
               </p>
             </div>
@@ -89,10 +89,10 @@ export function Dashboard() {
             <div className="h-full bg-green-600 w-3 mr-6 rounded-l-lg"></div>
 
             <div className="flex flex-col justify-center">
-              <p className="md:text-xl text-lg uppercase font-medium">
+              <p className="md:text-xl text-sm uppercase font-medium">
                 Nome:<a className="font-normal "> {item.name}</a>
               </p>
-              <p className="md:text-xl text-xs uppercase font-medium">
+              <p className="md:text-xl text-sm uppercase font-medium">
                 Tel: <a className="font-normal ">{item.email}</a>
               </p>
             </div>
