@@ -62,11 +62,11 @@ export function Dashboard() {
           <div className="bg-slate-950 rounded-lg h-20 flex" key={item.id}>
             <div className="h-full bg-green-600 w-3 mr-6 rounded-l-lg"></div>
             <div className="flex flex-col justify-center">
-              <p className="text-xl uppercase font-medium">
-                Nome:<a className="font-normal text-lg "> {item.name}</a>
+              <p className="md:text-xl text-xs uppercase font-medium">
+                Nome:<a className="font-normal "> {item.name}</a>
               </p>
-              <p className="text-xl uppercase font-medium">
-                Tel: <a className="font-normal text-lg ">{item.phone}</a>
+              <p className="md:text-xl text-xs uppercase font-medium">
+                Tel: <a className="font-normal ">{item.phone}</a>
               </p>
             </div>
             <button
@@ -92,8 +92,8 @@ export function Dashboard() {
               <p className="md:text-xl text:xs uppercase font-medium">
                 Nome:<a className="font-normal "> {item.name}</a>
               </p>
-              <p className="text-xl uppercase font-medium">
-                Tel: <a className="font-normal text-lg ">{item.email}</a>
+              <p className="md:text-xl text-xs uppercase font-medium">
+                Tel: <a className="font-normal ">{item.email}</a>
               </p>
             </div>
             <button
