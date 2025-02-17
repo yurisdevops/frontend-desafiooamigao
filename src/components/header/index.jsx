@@ -31,7 +31,7 @@ export function Header() {
           className="cursor-pointer hover:scale-110"
           onClick={handleLogout}
         >
-          <FiLogOut size={24} color="#FFF" />
+          <FiLogOut size={24} color="#FFF" className="hover:text-red-400"/>
         </button>
       </div>
     </header>
