@@ -28,7 +28,7 @@ export function Header() {
           Novo Membro
         </a>
         <button
-          className="cursor-pointer hover:scale-110 hover:text-red-400"
+          className="cursor-pointer hover:scale-110 hover:text-red"
           onClick={handleLogout}
         >
           <FiLogOut size={24} color="#FFF"/>
