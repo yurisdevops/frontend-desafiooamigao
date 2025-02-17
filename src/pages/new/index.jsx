@@ -53,7 +53,7 @@ export function New() {
         </h3>
         <label htmlFor="">Nome</label>
         <input
-          className="border p-1 px-2 rounded-lg border-slate-400 bg-white placeholder:text-black placeholder:opacity-45"
+          className="border p-1 px-2 rounded-lg border-slate-400 bg-white text-black placeholder:text-black placeholder:opacity-45"
           type="text"
           placeholder="Digite o nome do contato"
           value={name}
@@ -62,7 +62,7 @@ export function New() {
         />
         <label htmlFor="">Telefone</label>
         <input
-          className="border p-1 px-2 rounded-lg border-slate-400 bg-white placeholder:text-black placeholder:opacity-45"
+          className="border p-1 px-2 rounded-lg border-slate-400 bg-white text-black placeholder:text-black placeholder:opacity-45"
           type="text"
           placeholder="Digite o Telefone"
           value={phone}
